@@ -1,0 +1,84 @@
+                    <div class="row-fluid">
+                          <div class="navbar">
+                              <div class="navbar-inner">
+                                  <ul class="breadcrumb">
+                                      <i class="icon-chevron-left hide-sidebar"><a href="#" title="Hide Sidebar" rel="tooltip">&nbsp;</a></i>
+                                      <i class="icon-chevron-right show-sidebar" style="display:none;"><a href="#" title="Show Sidebar" rel="tooltip">&nbsp;</a></i>
+                                      <li>
+                                          <a href="#">Dashboard</a> <span class="divider">/</span>  
+                                      </li>
+                                      <li>
+                                          <a href="#">Settings</a> <span class="divider">/</span> 
+                                      </li>
+                                      <li class="active">Tools</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+
+                    <!-- morris stacked chart -->
+                    <div id="db_model_detail" class="row-fluid" style="display:none;">
+                        <!-- block -->
+                        <div class="block">
+                            <div class="navbar navbar-inner block-header">
+                                <div class="muted pull-left">{{nav_title}}</div>
+                            </div>
+                            <div class="block-content collapse in">
+                                <div class="span12">
+                                     <form class="form-horizontal" method="post" action="/bmw/app/api/v1/db_model.php/add_table">
+                                      <input name="rid" id="rid" type="hidden" value="{{rid}}" />
+                                      <fieldset>
+                                        <legend>建立/修改数据表</legend>
+                                        <div class="control-group">
+                                          <label class="control-label" for="tbname">数据表名</label>
+                                          <div class="controls">
+                                            tbl_model_<input class="input-medium" name="tbname" id="tbname" type="text" value="{{tbname}}">
+                                            <span class="help-inline">*(如:news,只能由字母、数字组成)</span>
+                                          </div>
+                                        </div>
+                                        <div class="control-group">
+                                          <label class="control-label" for="tname">数据表标识</label>
+                                          <div class="controls">
+                                            <input class="input-large" name="tname" id="tname" type="text" value="{{tname}}" />
+                                            <span class="help-inline">*(如:新闻数据表)</span>
+                                          </div>
+                                        </div>
+                                        <div class="control-group">
+                                          <label class="control-label" for="tsay">备注</label>
+                                          <div class="controls">
+                                            <textarea class="input-xlarge textarea" id="tsay" name="tsay" style="width: 300px; height: 100px">{{tsay}}</textarea>
+                                          </div>
+                                        </div>                                
+                                        <div class="form-actions">
+                                          <button type="submit" class="btn btn-primary">提交</button>
+                                          <button type="reset" class="btn">重置</button>
+                                        </div>
+                                      </fieldset>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /block -->
+                    </div>
+
+
+					<!-- morris stacked chart -->
+                    <div id="db_model_list" class="row-fluid">
+                        <!-- block -->
+                        <div class="block">
+                            <div class="navbar navbar-inner block-header">
+                                <div class="muted pull-left">Bootstrap dataTables</div>
+                            </div>
+                            <div class="block-content collapse in">                             
+                                <div class="span12 well">
+                                    <span id="act_add" class="btn">添加</span>
+                                </div>
+                            </div>
+                            <div class="block-content collapse in">                             
+                                <div class="span12" id="table_container">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /block -->
+                    </div>
